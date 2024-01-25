@@ -1,20 +1,8 @@
-/*Aula 1
-Variaveis/constantes(não substitui o valor) 
-= atribuição
-Imprimir algo na tela
-console.log('Hello, world');*/
-let variavel1 = 10;
-let soma;
-const pi = 3.14;
 
-console.log("Hello, world");
-console.log("Olá,mundo");
-console.log(variavel1);
-variavel1 = 20;
-console.log(variavel1);
-console.log(pi);
-soma = variavel1 + pi;
-console.log("O valor da soma é =", soma);
+//Condicionais if, else if e else
+//if(condição){
+//Bloco de codigo que vai ser executado caso aconteça a condição 
+//}
 
 let Gasolina = 5.79;
 let Etanol = 6.66
@@ -30,6 +18,8 @@ if (tipoCombustivel === 'Etanol'){
     let gastoTotalE = litrosConsumidos * Etanol;
     console.log ("O valor total que será gasto na viagem com etanol é = ",
     gastoTotalE.toFixed(2));
+//Caso a condição não seja verdadeira, podemos usar o else.
+//senao
 }else {
     let litrosConsumidos = distancia / gastoMedio;
     console.log("O total de litros consumidos foi de", litrosConsumidos);
@@ -61,6 +51,7 @@ if(media < 5){
 
     console.log('Sua média foi', media);
     console.log('Reprovação');
+//senao se
 }else if ((media >= 5) || (media <= 7)){
 
     console.log('Sua média foi', media);
@@ -108,7 +99,4 @@ if(condicaoPagamento === 1){
 }else {
     let valorFinal = valorProduto + (valorProduto * 0.1);
     console.log ('O valor do produto ficou por: ', valorFinal);
-
 }
-
-//Funções
