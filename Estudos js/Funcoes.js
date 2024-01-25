@@ -114,3 +114,4 @@ let valorProduto = 100;
 let condicaoPagamento = 1
 
 console.log(pagamento(condicaoPagamento, valorProduto));
+
