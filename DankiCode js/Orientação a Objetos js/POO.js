@@ -1,5 +1,3 @@
-
-
 // class Livro{
 //     #status
 //     constructor(titulo, autor, anoPublicacao, status){
@@ -94,34 +92,39 @@ class Conta{
     getSaldo(){return console.log(`O saldo da conta de ${this.titular} é R$${this.#saldo}`)}
     
 }
- const mateusAcount =  new Conta('Mateus', '0549', '498781', 700 )
+ let mateusAcount =  new Conta('Mateus', '0549', '498781', 700 )
  console.log(mateusAcount)
  mateusAcount.getSaldo()
  
 
-class ContaSalario extends Conta{
+ class ContaSalario extends Conta{
+
     #saldo
-    constructor(empresa){
+    constructor(empresa, titular, agencia, numero, saldo){
+        super(titular, agencia, numero, saldo)
         this.empresa=empresa
     }
 
-    getSaldo(){return console.log(`O saldo da conta de ${this.titular} é R$${this.#saldo}`)}
+    // getSaldo(){return console.log(`O saldo da conta de ${this.titular} é R$${this.#saldo}`)}
     setSaldo(saldo){this.#saldo = saldo}
     verSaldo(){
         this.getSaldo()
     }
     sacar(valorSaque){
         if(valorSaque > this.#saldo){
-            console.log(getSaldo())
-            return this.getSaldo()
+             return console.log(`Não é possivel realizar o saque ${this.verSaldo()} `)
+           
         }else{
-            this.setSaldo(this.#saldo - valorSaque) 
+            this.setSaldo() -= valorSaque
             return this.getSaldo()
         }
     }
 
-
 }
+mateusAcount = new ContaSalario('Digital College', 'Mateus', '5844', '148667', 700)
+console.log(mateusAcount)
+mateusAcount.sacar(800)
+
 
 class ContaCorrente extends Conta{
     #limiteTransferencia
@@ -139,12 +142,20 @@ class ContaCorrente extends Conta{
     }
     transferir(valorTransferir){
         if(valorTransferir > this.#saldo || valorTransferir > this.#limiteTransferencia){
-            console.log('Não é possvel realizar a transferencia')
+            return console.log('Não é possvel realizar a transferencia')
+        }
+        else{
+            this.setSaldo() -= valorTransferir
+            return this.gettSaldo()
         }
 
     }
     depositar(){}
-    emprestimo(){}
+    emprestimo(valorEmprestimo){
+        if(this.#limiteEmprestimo == true){
+            this.getSaldo() += valorEmprestimo
+        }
+    }
 }
 
 class ContaPoupança extends Conta{
