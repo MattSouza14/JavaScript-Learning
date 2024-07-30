@@ -112,7 +112,7 @@ class ContaSalario extends Conta{
     }
     sacar(valorSaque){
         if(valorSaque > this.#saldo){
-            console.log('Saldo insuficiente para saque')
+            console.log(getSaldo())
             return this.getSaldo()
         }else{
             this.setSaldo(this.#saldo - valorSaque) 
@@ -126,17 +126,29 @@ class ContaSalario extends Conta{
 class ContaCorrente extends Conta{
     #limiteTransferencia
     #limiteEmprestimo
+    #saldo
     constructor(limiteEmprestimo, temEmprestimo, limiteTransferencia){
         this.#limiteEmprestimo=limiteEmprestimo
         this.temEmprestimo=temEmprestimo
         this.#limiteTransferencia=limiteTransferencia
     }
-    transferir(){}
+    getSaldo(){return console.log(`O saldo da conta de ${this.titular} é R$${this.#saldo}`)}
+    setSaldo(saldo){this.#saldo = saldo}
+    verSaldo(){
+        this.getSaldo()
+    }
+    transferir(valorTransferir){
+        if(valorTransferir > this.#saldo || valorTransferir > this.#limiteTransferencia){
+            console.log('Não é possvel realizar a transferencia')
+        }
+
+    }
     depositar(){}
     emprestimo(){}
 }
 
 class ContaPoupança extends Conta{
+    #saldo
     constructor(dataAniverssario, rendimento){
         this.dataAniverssario=dataAniverssario
         this.rendimento=rendimento
