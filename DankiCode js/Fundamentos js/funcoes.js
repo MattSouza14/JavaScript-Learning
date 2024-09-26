@@ -16,3 +16,13 @@ let func = function (){
 nomeDaFuncao()
 funcaoComParametro('Mateus')
 func()
+
+// Arrow functions
+//Quando há apenas um retorno, não é nescessário o uso das {}
+//Quando há apenas um parametro, não é nescessário uso de ()
+let meuNome =(nome) =>{
+    return `Olá ${nome}`
+}
+console.log(meuNome("Mateus"))
+
+let saudacao = ()=> console.log("Olá")

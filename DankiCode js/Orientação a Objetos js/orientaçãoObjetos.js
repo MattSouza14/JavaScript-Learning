@@ -31,3 +31,10 @@ let carro = {
  }
  let pessoa2 = new Pessoa2("Mateus")
  console.log(pessoa2.nome)
+
+//Spread operator
+ const novoObjCarro = {...carro}
+ console.log(novoObjCarro)
+ 
+ novoObjCarro = {...carro, dono: "Mateus"}
+ console.log(novoObjCarro)
